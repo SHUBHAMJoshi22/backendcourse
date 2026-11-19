@@ -13,7 +13,18 @@ app.use(express.json());
 
 // Root check
 app.get("/", (req, res) => {
-  res.send("freeCodeCamp Back End & APIs Microservices Running");
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <body>
+        <h1>File Metadata Microservice</h1>
+        <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
+          <input id="inputfield" type="file" name="upfile" />
+          <input id="button" type="submit" value="Upload" />
+        </form>
+      </body>
+    </html>
+  `);
 });
 
 // ==========================================
